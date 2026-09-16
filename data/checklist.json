@@ -1,0 +1,2440 @@
+{
+  "categories": [
+    {
+      "id": "pre-move",
+      "name": "Before You Move In",
+      "icon": "\ud83d\udd11",
+      "items": [
+        {
+          "id": "pre-move--measure-room",
+          "name": "Measure room",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Measure before buying furniture"
+        },
+        {
+          "id": "pre-move--measure-wardrobe",
+          "name": "Measure wardrobe",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Check storage"
+        },
+        {
+          "id": "pre-move--check-electrical-sockets",
+          "name": "Check electrical sockets",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Plan extension boards"
+        },
+        {
+          "id": "pre-move--check-water-pressure",
+          "name": "Check water pressure",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Before moving"
+        },
+        {
+          "id": "pre-move--check-internet-availability",
+          "name": "Check internet availability",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Decide ISP"
+        },
+        {
+          "id": "pre-move--check-mobile-network",
+          "name": "Check mobile network",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Test inside room"
+        },
+        {
+          "id": "pre-move--check-appliances-provided",
+          "name": "Check appliances provided",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Avoid duplicate purchases"
+        },
+        {
+          "id": "pre-move--check-kitchen-inventory",
+          "name": "Check kitchen inventory",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "If shared kitchen"
+        },
+        {
+          "id": "pre-move--check-cleaning-status",
+          "name": "Check cleaning status",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Deep clean before unpacking"
+        },
+        {
+          "id": "pre-move--change-duplicate-keys",
+          "name": "Change / duplicate keys",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Get spare set"
+        },
+        {
+          "id": "pre-move--photograph-existing-damage",
+          "name": "Photograph existing damage",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "For deposit protection"
+        },
+        {
+          "id": "pre-move--record-electricity-meter",
+          "name": "Record electricity meter",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Move-in documentation"
+        },
+        {
+          "id": "pre-move--record-water-gas-meter",
+          "name": "Record water / gas meter",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If applicable"
+        },
+        {
+          "id": "pre-move--confirm-wi-fi-setup",
+          "name": "Confirm Wi-Fi setup",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Coordinate with roommates"
+        },
+        {
+          "id": "pre-move--confirm-house-rules",
+          "name": "Confirm house rules",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Guests, cleaning, bills, etc."
+        },
+        {
+          "id": "pre-move--confirm-bill-splitting",
+          "name": "Confirm bill splitting",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Rent, electricity, Wi-Fi, maid, etc."
+        }
+      ]
+    },
+    {
+      "id": "bedroom",
+      "name": "Bedroom",
+      "icon": "\ud83d\udecf\ufe0f",
+      "items": [
+        {
+          "id": "bedroom--bed-mattress",
+          "name": "Bed / mattress",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Check what flat provides"
+        },
+        {
+          "id": "bedroom--pillows",
+          "name": "Pillows",
+          "priority": "Essential",
+          "qty": 2,
+          "notes": "One spare"
+        },
+        {
+          "id": "bedroom--pillow-covers",
+          "name": "Pillow covers",
+          "priority": "Essential",
+          "qty": 4,
+          "notes": "2 sets"
+        },
+        {
+          "id": "bedroom--bedsheets",
+          "name": "Bedsheets",
+          "priority": "Essential",
+          "qty": 3,
+          "notes": "2 regular + 1 spare"
+        },
+        {
+          "id": "bedroom--comforter-duvet",
+          "name": "Comforter / duvet",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Depending on climate"
+        },
+        {
+          "id": "bedroom--blanket",
+          "name": "Blanket",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "For colder months"
+        },
+        {
+          "id": "bedroom--mattress-protector",
+          "name": "Mattress protector",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Protects mattress"
+        },
+        {
+          "id": "bedroom--bedside-table",
+          "name": "Bedside table",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If not provided"
+        },
+        {
+          "id": "bedroom--bedside-lamp",
+          "name": "Bedside lamp",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Prefer warm light"
+        },
+        {
+          "id": "bedroom--extension-board",
+          "name": "Extension board",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "For bedside charging"
+        },
+        {
+          "id": "bedroom--phone-charger",
+          "name": "Phone charger",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Keep bedside"
+        },
+        {
+          "id": "bedroom--clothes-hangers",
+          "name": "Clothes hangers",
+          "priority": "Essential",
+          "qty": 20,
+          "notes": "Mix of regular + pants hangers"
+        },
+        {
+          "id": "bedroom--laundry-basket",
+          "name": "Laundry basket",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Prefer ventilated"
+        },
+        {
+          "id": "bedroom--full-length-mirror",
+          "name": "Full-length mirror",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If wardrobe doesn't have one"
+        },
+        {
+          "id": "bedroom--curtains",
+          "name": "Curtains",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "If room doesn't have them"
+        },
+        {
+          "id": "bedroom--curtain-rod",
+          "name": "Curtain rod",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "If not installed"
+        },
+        {
+          "id": "bedroom--blackout-curtain",
+          "name": "Blackout curtain",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Especially for daytime sleeping"
+        },
+        {
+          "id": "bedroom--small-storage-boxes",
+          "name": "Small storage boxes",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "For miscellaneous items"
+        },
+        {
+          "id": "bedroom--under-bed-storage",
+          "name": "Under-bed storage",
+          "priority": "Useful",
+          "qty": "1-2",
+          "notes": "If space allows"
+        },
+        {
+          "id": "bedroom--room-air-freshener",
+          "name": "Room air freshener",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Prefer mild scent"
+        },
+        {
+          "id": "bedroom--small-dustbin",
+          "name": "Small dustbin",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Bedroom"
+        },
+        {
+          "id": "bedroom--tissues",
+          "name": "Tissues",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "Keep bedroom + desk"
+        },
+        {
+          "id": "bedroom--alarm-clock",
+          "name": "Alarm clock",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Phone is sufficient"
+        }
+      ]
+    },
+    {
+      "id": "vibes-decor",
+      "name": "Vibes & Decor",
+      "icon": "\ud83c\udfa8",
+      "items": [
+        {
+          "id": "vibes-decor--floor-lamp",
+          "name": "Floor lamp",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Best upgrade for ambient lighting"
+        },
+        {
+          "id": "vibes-decor--smart-bulbs",
+          "name": "Smart bulbs",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "For warm/dim lighting"
+        },
+        {
+          "id": "vibes-decor--indoor-plants",
+          "name": "Indoor plants",
+          "priority": "Useful",
+          "qty": "2-3",
+          "notes": "Low-maintenance"
+        },
+        {
+          "id": "vibes-decor--wall-art-prints",
+          "name": "Wall art / prints",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "Choose pieces you actually like"
+        },
+        {
+          "id": "vibes-decor--rug",
+          "name": "Rug",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Living room or bedroom"
+        },
+        {
+          "id": "vibes-decor--throw-blanket",
+          "name": "Throw blanket",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Sofa / bed"
+        },
+        {
+          "id": "vibes-decor--cushions",
+          "name": "Cushions",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "For sofa / floor seating"
+        },
+        {
+          "id": "vibes-decor--decorative-objects",
+          "name": "Decorative objects",
+          "priority": "Useful",
+          "qty": "2-3",
+          "notes": "Books, ceramics, small objects"
+        },
+        {
+          "id": "vibes-decor--vase",
+          "name": "Vase",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "For occasional flowers"
+        },
+        {
+          "id": "vibes-decor--fresh-flowers",
+          "name": "Fresh flowers",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Occasional, not permanent"
+        },
+        {
+          "id": "vibes-decor--candles",
+          "name": "Candles",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "Great for evenings / dates"
+        },
+        {
+          "id": "vibes-decor--diffuser-room-fragrance",
+          "name": "Diffuser / room fragrance",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "One signature scent is enough"
+        }
+      ]
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "icon": "\ud83c\udfae",
+      "items": [
+        {
+          "id": "entertainment--good-bluetooth-speaker",
+          "name": "Good Bluetooth speaker",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "For everyday music + hosting"
+        },
+        {
+          "id": "entertainment--board-game",
+          "name": "Board game",
+          "priority": "Useful",
+          "qty": "1-2",
+          "notes": "Choose something you'll actually play"
+        },
+        {
+          "id": "entertainment--party-card-game",
+          "name": "Party card game",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "For groups"
+        },
+        {
+          "id": "entertainment--projector",
+          "name": "Projector",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Only if you genuinely want movie nights"
+        }
+      ]
+    },
+    {
+      "id": "hosting",
+      "name": "Hosting",
+      "icon": "\ud83c\udf7d\ufe0f",
+      "items": [
+        {
+          "id": "hosting--extra-dinner-plates",
+          "name": "Extra dinner plates",
+          "priority": "Useful",
+          "qty": 4,
+          "notes": "For guests beyond your everyday set"
+        },
+        {
+          "id": "hosting--extra-cutlery",
+          "name": "Extra cutlery",
+          "priority": "Useful",
+          "qty": "4-6",
+          "notes": "For guests"
+        },
+        {
+          "id": "hosting--serving-platter",
+          "name": "Serving platter",
+          "priority": "Useful",
+          "qty": "1-2",
+          "notes": "For snacks / food"
+        },
+        {
+          "id": "hosting--serving-bowls",
+          "name": "Serving bowls",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "For snacks / sides"
+        },
+        {
+          "id": "hosting--snack-bowls",
+          "name": "Snack bowls",
+          "priority": "Useful",
+          "qty": "2-3",
+          "notes": "Small bowls for casual hosting"
+        },
+        {
+          "id": "hosting--serving-tray",
+          "name": "Serving tray",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Drinks / coffee / breakfast"
+        },
+        {
+          "id": "hosting--coasters",
+          "name": "Coasters",
+          "priority": "Useful",
+          "qty": "6-8",
+          "notes": "For living room"
+        },
+        {
+          "id": "hosting--bottle-opener",
+          "name": "Bottle opener",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Keep accessible"
+        },
+        {
+          "id": "hosting--extra-ice-tray",
+          "name": "Extra ice tray",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "For hosting"
+        },
+        {
+          "id": "hosting--paper-towels",
+          "name": "Paper towels",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "Keep one backup"
+        },
+        {
+          "id": "hosting--extra-trash-bags",
+          "name": "Extra trash bags",
+          "priority": "Useful",
+          "qty": "1 roll",
+          "notes": "For parties"
+        }
+      ]
+    },
+    {
+      "id": "dates",
+      "name": "Dates",
+      "icon": "\ud83d\udc90",
+      "items": [
+        {
+          "id": "dates--nice-dinner-plates",
+          "name": "Nice dinner plates",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "Separate from everyday plates"
+        },
+        {
+          "id": "dates--nice-glasses",
+          "name": "Nice glasses",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "For dinner / drinks"
+        },
+        {
+          "id": "dates--cloth-napkins",
+          "name": "Cloth napkins",
+          "priority": "Optional",
+          "qty": "2-4",
+          "notes": "Small upgrade for dinner"
+        },
+        {
+          "id": "dates--serving-board",
+          "name": "Serving board",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "For snacks / appetizers"
+        },
+        {
+          "id": "dates--candle-holders",
+          "name": "Candle holders",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "For dinner table"
+        },
+        {
+          "id": "dates--small-table-centerpiece",
+          "name": "Small table centerpiece",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Vase / plant / candle"
+        },
+        {
+          "id": "dates--dimmable-lighting",
+          "name": "Dimmable lighting",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If smart bulbs aren't enough"
+        },
+        {
+          "id": "dates--breakfast-tray",
+          "name": "Breakfast tray",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Useful beyond dates too"
+        },
+        {
+          "id": "dates--coffee-tea-setup",
+          "name": "Coffee / tea setup",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "For slow mornings together"
+        }
+      ]
+    },
+    {
+      "id": "guests",
+      "name": "Guests",
+      "icon": "\ud83d\udecb\ufe0f",
+      "items": [
+        {
+          "id": "guests--guest-pillows",
+          "name": "Guest pillows",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "Separate from your regular pillows"
+        },
+        {
+          "id": "guests--guest-blanket",
+          "name": "Guest blanket",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "For overnight guests"
+        },
+        {
+          "id": "guests--guest-toiletries",
+          "name": "Guest toiletries",
+          "priority": "Useful",
+          "qty": "1 set",
+          "notes": "Keep a small backup kit"
+        },
+        {
+          "id": "guests--guest-hangers",
+          "name": "Guest hangers",
+          "priority": "Useful",
+          "qty": 5,
+          "notes": "For visitors staying over"
+        },
+        {
+          "id": "guests--extra-phone-chargers",
+          "name": "Extra phone chargers",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "USB-C / Lightning as needed"
+        },
+        {
+          "id": "guests--guest-storage-basket",
+          "name": "Guest storage basket",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "For overnight visitors"
+        }
+      ]
+    },
+    {
+      "id": "entryway",
+      "name": "Entryway",
+      "icon": "\ud83d\udeaa",
+      "items": [
+        {
+          "id": "entryway--key-tray",
+          "name": "Key tray",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Keys / wallet / earbuds"
+        },
+        {
+          "id": "entryway--shoe-mat",
+          "name": "Shoe mat",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Protects floor near entrance"
+        },
+        {
+          "id": "entryway--shoe-rack",
+          "name": "Shoe rack",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If not provided"
+        },
+        {
+          "id": "entryway--wall-hooks",
+          "name": "Wall hooks",
+          "priority": "Useful",
+          "qty": "4-6",
+          "notes": "Bags, jackets, umbrellas"
+        },
+        {
+          "id": "entryway--small-bench",
+          "name": "Small bench",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Useful if space allows"
+        }
+      ]
+    },
+    {
+      "id": "balcony",
+      "name": "Balcony",
+      "icon": "\ud83c\udf3f",
+      "items": [
+        {
+          "id": "balcony--outdoor-chairs",
+          "name": "Outdoor chairs",
+          "priority": "Optional",
+          "qty": 2,
+          "notes": "If you have a usable balcony"
+        },
+        {
+          "id": "balcony--small-outdoor-table",
+          "name": "Small outdoor table",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "For coffee / drinks"
+        },
+        {
+          "id": "balcony--outdoor-plants",
+          "name": "Outdoor plants",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "Good use of balcony space"
+        },
+        {
+          "id": "balcony--outdoor-lighting",
+          "name": "Outdoor lighting",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "For evenings"
+        },
+        {
+          "id": "balcony--outdoor-cushions",
+          "name": "Outdoor cushions",
+          "priority": "Optional",
+          "qty": 2,
+          "notes": "Only if you actually use the space"
+        }
+      ]
+    },
+    {
+      "id": "personal-touch",
+      "name": "Personal Touch",
+      "icon": "\ud83d\uddbc\ufe0f",
+      "items": [
+        {
+          "id": "personal-touch--photo-prints",
+          "name": "Photo prints",
+          "priority": "Optional",
+          "qty": "3-6",
+          "notes": "Travel / friends / memories"
+        },
+        {
+          "id": "personal-touch--travel-souvenirs",
+          "name": "Travel souvenirs",
+          "priority": "Optional",
+          "qty": "2-3",
+          "notes": "Only meaningful pieces"
+        },
+        {
+          "id": "personal-touch--personal-artwork",
+          "name": "Personal artwork",
+          "priority": "Optional",
+          "qty": "1-3",
+          "notes": "Sketches / photography etc."
+        },
+        {
+          "id": "personal-touch--record-album-display",
+          "name": "Record / album display",
+          "priority": "Optional",
+          "qty": "1-2",
+          "notes": "If music is part of your space"
+        },
+        {
+          "id": "personal-touch--memory-keepsake-display",
+          "name": "Memory / keepsake display",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Small, curated collection"
+        }
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "name": "Lifestyle",
+      "icon": "\u2728",
+      "items": [
+        {
+          "id": "lifestyle--wireless-charging-dock",
+          "name": "Wireless charging dock",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "One place to charge daily devices"
+        },
+        {
+          "id": "lifestyle--smart-plug",
+          "name": "Smart plug",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "Lamps / appliances"
+        },
+        {
+          "id": "lifestyle--motion-night-light",
+          "name": "Motion night light",
+          "priority": "Useful",
+          "qty": "1-2",
+          "notes": "Hallway / bathroom at night"
+        },
+        {
+          "id": "lifestyle--storage-ottoman",
+          "name": "Storage ottoman",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Seating + storage"
+        },
+        {
+          "id": "lifestyle--bedside-charging-dock",
+          "name": "Bedside charging dock",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Keep cables tidy"
+        },
+        {
+          "id": "lifestyle--entryway-organizer",
+          "name": "Entryway organizer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Small daily-carry items"
+        },
+        {
+          "id": "lifestyle--guest-snack-shelf-drawer",
+          "name": "Guest snack shelf / drawer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Easy snacks for visitors"
+        },
+        {
+          "id": "lifestyle--coffee-drinks-corner",
+          "name": "Coffee / drinks corner",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "One dedicated spot for daily drinks"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "name": "Food",
+      "icon": "\ud83c\udf5a",
+      "items": [
+        {
+          "id": "food--rice",
+          "name": "Rice",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Start small"
+        },
+        {
+          "id": "food--atta-flour",
+          "name": "Atta / flour",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If cooking"
+        },
+        {
+          "id": "food--dal",
+          "name": "Dal",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "food--salt",
+          "name": "Salt",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "food--sugar",
+          "name": "Sugar",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "food--cooking-oil",
+          "name": "Cooking oil",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "food--basic-spices",
+          "name": "Basic spices",
+          "priority": "Essential",
+          "qty": "1 set",
+          "notes": "Turmeric, chilli, cumin, etc."
+        },
+        {
+          "id": "food--tea-coffee",
+          "name": "Tea / coffee",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "food--biscuits-snacks",
+          "name": "Biscuits / snacks",
+          "priority": "Useful",
+          "qty": "2-3",
+          "notes": null
+        },
+        {
+          "id": "food--breakfast-basics",
+          "name": "Breakfast basics",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Oats, cereal, bread etc."
+        },
+        {
+          "id": "food--condiments",
+          "name": "Condiments",
+          "priority": "Optional",
+          "qty": "1 set",
+          "notes": "Ketchup, sauces etc."
+        },
+        {
+          "id": "food--drinking-water",
+          "name": "Drinking water",
+          "priority": "Essential",
+          "qty": "As needed",
+          "notes": "First few days"
+        }
+      ]
+    },
+    {
+      "id": "comfort",
+      "name": "Comfort",
+      "icon": "\ud83c\udf24\ufe0f",
+      "items": [
+        {
+          "id": "comfort--bedside-charging-setup",
+          "name": "Bedside charging setup",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "comfort--blackout-curtains",
+          "name": "Blackout curtains",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "comfort--fan",
+          "name": "Fan",
+          "priority": "As needed",
+          "qty": 1,
+          "notes": "Check room"
+        },
+        {
+          "id": "comfort--ac",
+          "name": "AC",
+          "priority": "As needed",
+          "qty": 1,
+          "notes": "Check room"
+        },
+        {
+          "id": "comfort--humidifier-dehumidifier",
+          "name": "Humidifier / dehumidifier",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Only if needed"
+        },
+        {
+          "id": "comfort--air-purifier",
+          "name": "Air purifier",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Only if needed"
+        },
+        {
+          "id": "comfort--small-plant",
+          "name": "Small plant",
+          "priority": "Optional",
+          "qty": "1-2",
+          "notes": null
+        },
+        {
+          "id": "comfort--wall-hooks",
+          "name": "Wall hooks",
+          "priority": "Useful",
+          "qty": "4-6",
+          "notes": null
+        },
+        {
+          "id": "comfort--full-length-mirror",
+          "name": "Full-length mirror",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "comfort--decor-artwork",
+          "name": "Decor / artwork",
+          "priority": "Optional",
+          "qty": "As desired",
+          "notes": null
+        },
+        {
+          "id": "comfort--rug",
+          "name": "Rug",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "comfort--extra-cushions",
+          "name": "Extra cushions",
+          "priority": "Optional",
+          "qty": 2,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "docs",
+      "name": "Docs",
+      "icon": "\ud83d\udcc4",
+      "items": [
+        {
+          "id": "docs--passport-id-copies",
+          "name": "Passport / ID copies",
+          "priority": "Essential",
+          "qty": "1 set",
+          "notes": "Keep digital + physical"
+        },
+        {
+          "id": "docs--rental-agreement",
+          "name": "Rental agreement",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Physical + digital"
+        },
+        {
+          "id": "docs--important-certificates",
+          "name": "Important certificates",
+          "priority": "Useful",
+          "qty": "1 set",
+          "notes": null
+        },
+        {
+          "id": "docs--medical-insurance-documents",
+          "name": "Medical / insurance documents",
+          "priority": "Useful",
+          "qty": "1 set",
+          "notes": null
+        },
+        {
+          "id": "docs--passport-photos",
+          "name": "Passport photos",
+          "priority": "Useful",
+          "qty": "4-6",
+          "notes": null
+        },
+        {
+          "id": "docs--document-folder",
+          "name": "Document folder",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "name": "Safety",
+      "icon": "\ud83d\udee1\ufe0f",
+      "items": [
+        {
+          "id": "safety--spare-keys",
+          "name": "Spare keys",
+          "priority": "Essential",
+          "qty": 2,
+          "notes": "Ask landlord"
+        },
+        {
+          "id": "safety--door-lock-smart-lock",
+          "name": "Door lock / smart lock",
+          "priority": "As needed",
+          "qty": 1,
+          "notes": "Check existing lock"
+        },
+        {
+          "id": "safety--door-stopper",
+          "name": "Door stopper",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "safety--smoke-detector",
+          "name": "Smoke detector",
+          "priority": "As needed",
+          "qty": 1,
+          "notes": "Check building"
+        },
+        {
+          "id": "safety--fire-extinguisher",
+          "name": "Fire extinguisher",
+          "priority": "As needed",
+          "qty": 1,
+          "notes": "Check building"
+        },
+        {
+          "id": "safety--emergency-contacts",
+          "name": "Emergency contacts",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Save in phone"
+        },
+        {
+          "id": "safety--power-surge-protector",
+          "name": "Power surge protector",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "safety--candles-emergency-light",
+          "name": "Candles / emergency light",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "safety--small-safe-lockbox",
+          "name": "Small safe / lockbox",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "For documents"
+        }
+      ]
+    },
+    {
+      "id": "daily",
+      "name": "Daily",
+      "icon": "\ud83c\udf92",
+      "items": [
+        {
+          "id": "daily--reusable-shopping-bags",
+          "name": "Reusable shopping bags",
+          "priority": "Useful",
+          "qty": "3-5",
+          "notes": null
+        },
+        {
+          "id": "daily--water-bottle",
+          "name": "Water bottle",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--thermos-flask",
+          "name": "Thermos / flask",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--backpack",
+          "name": "Backpack",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--small-everyday-bag",
+          "name": "Small everyday bag",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--keys-organizer",
+          "name": "Keys organizer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--flashlight",
+          "name": "Flashlight",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--batteries",
+          "name": "Batteries",
+          "priority": "Useful",
+          "qty": "1 pack",
+          "notes": null
+        },
+        {
+          "id": "daily--power-bank",
+          "name": "Power bank",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--charging-cables",
+          "name": "Charging cables",
+          "priority": "Essential",
+          "qty": "2-3",
+          "notes": "Phone + other devices"
+        },
+        {
+          "id": "daily--universal-adapter",
+          "name": "Universal adapter",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--extension-boards",
+          "name": "Extension boards",
+          "priority": "Essential",
+          "qty": "2-3",
+          "notes": "Bedroom + workstation + living area"
+        },
+        {
+          "id": "daily--first-aid-kit",
+          "name": "First-aid kit",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Basic supplies"
+        },
+        {
+          "id": "daily--thermometer",
+          "name": "Thermometer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--basic-medicines",
+          "name": "Basic medicines",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Common OTC medicines"
+        },
+        {
+          "id": "daily--hot-water-bag",
+          "name": "Hot water bag",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--sewing-kit",
+          "name": "Sewing kit",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Needle, thread, buttons"
+        },
+        {
+          "id": "daily--safety-pins",
+          "name": "Safety pins",
+          "priority": "Useful",
+          "qty": "1 pack",
+          "notes": null
+        },
+        {
+          "id": "daily--super-glue",
+          "name": "Super glue",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--duct-tape",
+          "name": "Duct tape",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--scissors",
+          "name": "Scissors",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--measuring-tape",
+          "name": "Measuring tape",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--basic-toolkit",
+          "name": "Basic toolkit",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Screwdriver, pliers, etc."
+        },
+        {
+          "id": "daily--weekly-meal-plan",
+          "name": "Weekly meal plan",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Reduce daily decisions"
+        },
+        {
+          "id": "daily--weekly-grocery-list",
+          "name": "Weekly grocery list",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--cleaning-schedule",
+          "name": "Cleaning schedule",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Small weekly reset"
+        },
+        {
+          "id": "daily--laundry-day",
+          "name": "Laundry day",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Set a recurring day"
+        },
+        {
+          "id": "daily--monthly-expense-tracker",
+          "name": "Monthly expense tracker",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Track rent + utilities + food"
+        },
+        {
+          "id": "daily--shared-expense-tracker",
+          "name": "Shared expense tracker",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "For roommates"
+        },
+        {
+          "id": "daily--household-restock-list",
+          "name": "Household restock list",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Toilet paper, detergent, etc."
+        },
+        {
+          "id": "daily--charging-station",
+          "name": "Charging station",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "One place for devices"
+        },
+        {
+          "id": "daily--key-bowl-tray",
+          "name": "Key bowl / tray",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Near entrance"
+        },
+        {
+          "id": "daily--entryway-storage",
+          "name": "Entryway storage",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Shoes, keys, wallet"
+        },
+        {
+          "id": "daily--reusable-water-setup",
+          "name": "Reusable water setup",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Reduce daily purchases"
+        },
+        {
+          "id": "daily--small-tool-drawer",
+          "name": "Small tool drawer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Keep household fixes together"
+        },
+        {
+          "id": "daily--important-numbers-list",
+          "name": "Important numbers list",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Landlord, plumber, electrician, security"
+        },
+        {
+          "id": "daily--monthly-home-reset",
+          "name": "Monthly home reset",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Deep clean + declutter"
+        },
+        {
+          "id": "daily--perfume-fragrance",
+          "name": "Perfume / fragrance",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--body-lotion",
+          "name": "Body lotion",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--lip-balm",
+          "name": "Lip balm",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--hair-products",
+          "name": "Hair products",
+          "priority": "Useful",
+          "qty": "1 set",
+          "notes": null
+        },
+        {
+          "id": "daily--personal-grooming-kit",
+          "name": "Personal grooming kit",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "daily--cotton-buds",
+          "name": "Cotton buds",
+          "priority": "Optional",
+          "qty": "1 pack",
+          "notes": null
+        },
+        {
+          "id": "daily--tissues",
+          "name": "Tissues",
+          "priority": "Useful",
+          "qty": "1 box",
+          "notes": null
+        },
+        {
+          "id": "daily--hand-sanitizer",
+          "name": "Hand sanitizer",
+          "priority": "Useful",
+          "qty": "1-2",
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "cleaning",
+      "name": "Cleaning",
+      "icon": "\ud83e\uddf9",
+      "items": [
+        {
+          "id": "cleaning--broom",
+          "name": "Broom",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--dustpan",
+          "name": "Dustpan",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--mop",
+          "name": "Mop",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--bucket",
+          "name": "Bucket",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--floor-cleaner",
+          "name": "Floor cleaner",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--disinfectant",
+          "name": "Disinfectant",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--glass-cleaner",
+          "name": "Glass cleaner",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--multi-purpose-cleaner",
+          "name": "Multi-purpose cleaner",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--scrub-pads",
+          "name": "Scrub pads",
+          "priority": "Useful",
+          "qty": "1 pack",
+          "notes": null
+        },
+        {
+          "id": "cleaning--microfiber-cloths",
+          "name": "Microfiber cloths",
+          "priority": "Essential",
+          "qty": "6-10",
+          "notes": "Use for different areas"
+        },
+        {
+          "id": "cleaning--dusting-cloth",
+          "name": "Dusting cloth",
+          "priority": "Useful",
+          "qty": 3,
+          "notes": null
+        },
+        {
+          "id": "cleaning--trash-bags",
+          "name": "Trash bags",
+          "priority": "Essential",
+          "qty": "2 rolls",
+          "notes": null
+        },
+        {
+          "id": "cleaning--gloves",
+          "name": "Gloves",
+          "priority": "Useful",
+          "qty": "1 pair",
+          "notes": null
+        },
+        {
+          "id": "cleaning--vacuum-cleaner",
+          "name": "Vacuum cleaner",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Useful if you have pets / carpets"
+        },
+        {
+          "id": "cleaning--laundry-detergent",
+          "name": "Laundry detergent",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--fabric-softener",
+          "name": "Fabric softener",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--stain-remover",
+          "name": "Stain remover",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--toilet-cleaner",
+          "name": "Toilet cleaner",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--drain-cleaner",
+          "name": "Drain cleaner",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--insect-spray",
+          "name": "Insect spray",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "cleaning--ant-cockroach-control",
+          "name": "Ant / cockroach control",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "As needed"
+        }
+      ]
+    },
+    {
+      "id": "laundry",
+      "name": "Laundry",
+      "icon": "\ud83e\uddfa",
+      "items": [
+        {
+          "id": "laundry--washing-machine",
+          "name": "Washing machine",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Check if flat provides"
+        },
+        {
+          "id": "laundry--laundry-detergent",
+          "name": "Laundry detergent",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "laundry--laundry-basket",
+          "name": "Laundry basket",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "laundry--drying-rack",
+          "name": "Drying rack",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "If no balcony drying setup"
+        },
+        {
+          "id": "laundry--cloth-clips",
+          "name": "Cloth clips",
+          "priority": "Useful",
+          "qty": "10-20",
+          "notes": null
+        },
+        {
+          "id": "laundry--iron",
+          "name": "Iron",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "laundry--ironing-board",
+          "name": "Ironing board",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "laundry--mesh-laundry-bags",
+          "name": "Mesh laundry bags",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "For delicate clothes"
+        },
+        {
+          "id": "laundry--lint-roller",
+          "name": "Lint roller",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "laundry--clothesline",
+          "name": "Clothesline",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If needed"
+        }
+      ]
+    },
+    {
+      "id": "bathroom",
+      "name": "Bathroom",
+      "icon": "\ud83d\udebf",
+      "items": [
+        {
+          "id": "bathroom--bath-towels",
+          "name": "Bath towels",
+          "priority": "Essential",
+          "qty": 3,
+          "notes": "2 regular + 1 spare"
+        },
+        {
+          "id": "bathroom--hand-towels",
+          "name": "Hand towels",
+          "priority": "Essential",
+          "qty": 2,
+          "notes": 2.0
+        },
+        {
+          "id": "bathroom--face-towels",
+          "name": "Face towels",
+          "priority": "Optional",
+          "qty": 2,
+          "notes": "If you use them"
+        },
+        {
+          "id": "bathroom--bath-mat",
+          "name": "Bath mat",
+          "priority": "Essential",
+          "qty": "1-2",
+          "notes": "One spare"
+        },
+        {
+          "id": "bathroom--toothbrush",
+          "name": "Toothbrush",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Spare optional"
+        },
+        {
+          "id": "bathroom--toothpaste",
+          "name": "Toothpaste",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Keep backup"
+        },
+        {
+          "id": "bathroom--hand-wash",
+          "name": "Hand wash",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Refillable dispenser"
+        },
+        {
+          "id": "bathroom--body-wash-soap",
+          "name": "Body wash / soap",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Personal preference"
+        },
+        {
+          "id": "bathroom--shampoo",
+          "name": "Shampoo",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Personal preference"
+        },
+        {
+          "id": "bathroom--conditioner",
+          "name": "Conditioner",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "If needed"
+        },
+        {
+          "id": "bathroom--face-wash",
+          "name": "Face wash",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Personal preference"
+        },
+        {
+          "id": "bathroom--moisturizer",
+          "name": "Moisturizer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Personal preference"
+        },
+        {
+          "id": "bathroom--sunscreen",
+          "name": "Sunscreen",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Daily use"
+        },
+        {
+          "id": "bathroom--deodorant",
+          "name": "Deodorant",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Daily use"
+        },
+        {
+          "id": "bathroom--razor-trimmer",
+          "name": "Razor / trimmer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Personal grooming"
+        },
+        {
+          "id": "bathroom--shaving-cream",
+          "name": "Shaving cream",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "If using razor"
+        },
+        {
+          "id": "bathroom--nail-cutter",
+          "name": "Nail cutter",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "bathroom--comb-hairbrush",
+          "name": "Comb / hairbrush",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "bathroom--toilet-cleaner",
+          "name": "Toilet cleaner",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "For cleaning"
+        },
+        {
+          "id": "bathroom--toilet-brush",
+          "name": "Toilet brush",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "bathroom--bathroom-cleaner",
+          "name": "Bathroom cleaner",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "bathroom--scrub-sponge",
+          "name": "Scrub sponge",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "Keep one spare"
+        },
+        {
+          "id": "bathroom--microfiber-cloths",
+          "name": "Microfiber cloths",
+          "priority": "Useful",
+          "qty": 3,
+          "notes": "Cleaning"
+        },
+        {
+          "id": "bathroom--toilet-paper",
+          "name": "Toilet paper",
+          "priority": "Essential",
+          "qty": 4,
+          "notes": "Keep backup"
+        },
+        {
+          "id": "bathroom--tissues",
+          "name": "Tissues",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": null
+        },
+        {
+          "id": "bathroom--hair-dryer",
+          "name": "Hair dryer",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "bathroom--small-bathroom-bin",
+          "name": "Small bathroom bin",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "With liner"
+        },
+        {
+          "id": "bathroom--toiletry-organizer",
+          "name": "Toiletry organizer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "bathroom--shower-caddy",
+          "name": "Shower caddy",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If bathroom storage is limited"
+        },
+        {
+          "id": "bathroom--plunger",
+          "name": "Plunger",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Unexciting but important"
+        },
+        {
+          "id": "bathroom--air-freshener",
+          "name": "Air freshener",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "wardrobe",
+      "name": "Wardrobe",
+      "icon": "\ud83d\udc55",
+      "items": [
+        {
+          "id": "wardrobe--everyday-t-shirts",
+          "name": "Everyday T-shirts",
+          "priority": "Essential",
+          "qty": "7-10",
+          "notes": "Adjust to laundry frequency"
+        },
+        {
+          "id": "wardrobe--casual-shirts",
+          "name": "Casual shirts",
+          "priority": "Essential",
+          "qty": "4-6",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--formal-shirts",
+          "name": "Formal shirts",
+          "priority": "Useful",
+          "qty": "2-3",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--jeans-trousers",
+          "name": "Jeans / trousers",
+          "priority": "Essential",
+          "qty": "4-6",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--shorts",
+          "name": "Shorts",
+          "priority": "Essential",
+          "qty": "3-4",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--underwear",
+          "name": "Underwear",
+          "priority": "Essential",
+          "qty": "10-14",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--socks",
+          "name": "Socks",
+          "priority": "Essential",
+          "qty": "10-14",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--sleepwear",
+          "name": "Sleepwear",
+          "priority": "Essential",
+          "qty": "3-4",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--workout-clothes",
+          "name": "Workout clothes",
+          "priority": "Useful",
+          "qty": "4-6",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--office-clothes",
+          "name": "Office clothes",
+          "priority": "Essential",
+          "qty": "5-7",
+          "notes": "Depending on office dress code"
+        },
+        {
+          "id": "wardrobe--jacket-light-layer",
+          "name": "Jacket / light layer",
+          "priority": "Useful",
+          "qty": "1-2",
+          "notes": null
+        },
+        {
+          "id": "wardrobe--winter-clothes",
+          "name": "Winter clothes",
+          "priority": "Useful",
+          "qty": "As needed",
+          "notes": "Seasonal"
+        },
+        {
+          "id": "wardrobe--shoes",
+          "name": "Shoes",
+          "priority": "Essential",
+          "qty": "3-5",
+          "notes": "Everyday + office + workout"
+        },
+        {
+          "id": "wardrobe--slippers",
+          "name": "Slippers",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Home/bathroom"
+        },
+        {
+          "id": "wardrobe--belts",
+          "name": "Belts",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": null
+        },
+        {
+          "id": "wardrobe--wallet",
+          "name": "Wallet",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "wardrobe--umbrella",
+          "name": "Umbrella",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "wardrobe--sunglasses",
+          "name": "Sunglasses",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "wardrobe--laundry-bags",
+          "name": "Laundry bags",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": "For travel/delicates"
+        },
+        {
+          "id": "wardrobe--shoe-organizer",
+          "name": "Shoe organizer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If needed"
+        },
+        {
+          "id": "wardrobe--clothes-storage-bags",
+          "name": "Clothes storage bags",
+          "priority": "Useful",
+          "qty": "2-4",
+          "notes": "Seasonal clothes"
+        }
+      ]
+    },
+    {
+      "id": "workstation",
+      "name": "Workstation",
+      "icon": "\ud83d\udcbb",
+      "items": [
+        {
+          "id": "workstation--work-desk",
+          "name": "Work desk",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "If not provided"
+        },
+        {
+          "id": "workstation--office-chair",
+          "name": "Office chair",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Don't cheap out here"
+        },
+        {
+          "id": "workstation--monitor",
+          "name": "Monitor",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "If needed"
+        },
+        {
+          "id": "workstation--monitor-arm",
+          "name": "Monitor arm",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Optional"
+        },
+        {
+          "id": "workstation--keyboard",
+          "name": "Keyboard",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--mouse",
+          "name": "Mouse",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--mouse-pad",
+          "name": "Mouse pad",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--laptop-stand",
+          "name": "Laptop stand",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--desk-lamp",
+          "name": "Desk lamp",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--extension-board",
+          "name": "Extension board",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "Prefer surge protection"
+        },
+        {
+          "id": "workstation--cable-organizer",
+          "name": "Cable organizer",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--cable-ties-velcro",
+          "name": "Cable ties / Velcro",
+          "priority": "Useful",
+          "qty": "1 pack",
+          "notes": null
+        },
+        {
+          "id": "workstation--usb-c-hub-dock",
+          "name": "USB-C hub / dock",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": "Especially for laptop setup"
+        },
+        {
+          "id": "workstation--headphones-earphones",
+          "name": "Headphones / earphones",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--phone-stand",
+          "name": "Phone stand",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--desk-organizer",
+          "name": "Desk organizer",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--notebook",
+          "name": "Notebook",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "workstation--pens",
+          "name": "Pens",
+          "priority": "Useful",
+          "qty": "3-5",
+          "notes": null
+        },
+        {
+          "id": "workstation--screen-cleaning-cloth",
+          "name": "Screen cleaning cloth",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": null
+        },
+        {
+          "id": "workstation--microfiber-cloths",
+          "name": "Microfiber cloths",
+          "priority": "Useful",
+          "qty": 2,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "icon": "\ud83c\udf73",
+      "items": [
+        {
+          "id": "kitchen--plates",
+          "name": "Plates",
+          "priority": "Essential",
+          "qty": 4,
+          "notes": "2-4 is enough for one person"
+        },
+        {
+          "id": "kitchen--bowls",
+          "name": "Bowls",
+          "priority": "Essential",
+          "qty": 4,
+          "notes": null
+        },
+        {
+          "id": "kitchen--glasses",
+          "name": "Glasses",
+          "priority": "Essential",
+          "qty": 4,
+          "notes": null
+        },
+        {
+          "id": "kitchen--mugs",
+          "name": "Mugs",
+          "priority": "Essential",
+          "qty": 2,
+          "notes": null
+        },
+        {
+          "id": "kitchen--cutlery-set",
+          "name": "Cutlery set",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "4-piece or 6-piece"
+        },
+        {
+          "id": "kitchen--kitchen-knife",
+          "name": "Kitchen knife",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--cutting-board",
+          "name": "Cutting board",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--peeler",
+          "name": "Peeler",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--kitchen-scissors",
+          "name": "Kitchen scissors",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--spatula",
+          "name": "Spatula",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--ladle",
+          "name": "Ladle",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--tongs",
+          "name": "Tongs",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--serving-spoon",
+          "name": "Serving spoon",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--frying-pan",
+          "name": "Frying pan",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--saucepan",
+          "name": "Saucepan",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--pressure-cooker",
+          "name": "Pressure cooker",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "If cooking Indian food"
+        },
+        {
+          "id": "kitchen--kadhai",
+          "name": "Kadhai",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "If needed"
+        },
+        {
+          "id": "kitchen--storage-containers",
+          "name": "Storage containers",
+          "priority": "Essential",
+          "qty": "6-10",
+          "notes": "Mix of sizes"
+        },
+        {
+          "id": "kitchen--water-bottle",
+          "name": "Water bottle",
+          "priority": "Essential",
+          "qty": "1-2",
+          "notes": null
+        },
+        {
+          "id": "kitchen--lunch-box",
+          "name": "Lunch box",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--ice-tray",
+          "name": "Ice tray",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--dishwashing-sponge",
+          "name": "Dishwashing sponge",
+          "priority": "Essential",
+          "qty": 3,
+          "notes": "Keep spares"
+        },
+        {
+          "id": "kitchen--dishwashing-liquid",
+          "name": "Dishwashing liquid",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--dish-rack",
+          "name": "Dish rack",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": "If not provided"
+        },
+        {
+          "id": "kitchen--kitchen-towels",
+          "name": "Kitchen towels",
+          "priority": "Essential",
+          "qty": 3,
+          "notes": null
+        },
+        {
+          "id": "kitchen--aluminium-foil",
+          "name": "Aluminium foil",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--cling-film",
+          "name": "Cling film",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--zip-lock-bags",
+          "name": "Zip-lock bags",
+          "priority": "Optional",
+          "qty": "1 pack",
+          "notes": null
+        },
+        {
+          "id": "kitchen--trash-bags",
+          "name": "Trash bags",
+          "priority": "Essential",
+          "qty": "1 roll",
+          "notes": null
+        },
+        {
+          "id": "kitchen--kitchen-bin",
+          "name": "Kitchen bin",
+          "priority": "Essential",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--water-filter-purifier",
+          "name": "Water filter / purifier",
+          "priority": "As needed",
+          "qty": 1,
+          "notes": "Check flat first"
+        },
+        {
+          "id": "kitchen--electric-kettle",
+          "name": "Electric kettle",
+          "priority": "Useful",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--microwave",
+          "name": "Microwave",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Check flat"
+        },
+        {
+          "id": "kitchen--toaster",
+          "name": "Toaster",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": null
+        },
+        {
+          "id": "kitchen--coffee-tea-setup",
+          "name": "Coffee / tea setup",
+          "priority": "Optional",
+          "qty": 1,
+          "notes": "Based on preference"
+        }
+      ]
+    }
+  ]
+}

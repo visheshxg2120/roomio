@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Move-in Checklist</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="topbar-title">
+      <span class="topbar-icon">🏠</span>
+      <div>
+        <h1>Move-in Checklist</h1>
+        <p class="subtitle">Everything for the new place, in one place.</p>
+      </div>
+    </div>
+    <button id="resetBtn" class="btn btn-ghost" title="Clear all progress">Reset progress</button>
+  </header>
+
+  <section class="summary" id="summary">
+    <div class="summary-progress">
+      <div class="summary-progress-top">
+        <span id="summaryLabel">0 of 0 done</span>
+        <span id="summaryPercent">0%</span>
+      </div>
+      <div class="progress-bar large">
+        <div class="progress-bar-fill" id="summaryFill"></div>
+      </div>
+    </div>
+    <div class="summary-stats">
+      <div class="stat-pill">
+        <span class="stat-value" id="statEssentialLeft">0</span>
+        <span class="stat-label">essential left</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-value" id="statCategoriesDone">0</span>
+        <span class="stat-label">categories complete</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-value" id="statTotalItems">0</span>
+        <span class="stat-label">total items</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="searchInput" placeholder="Search items…" autocomplete="off" />
+    </div>
+    <div class="chip-row" id="priorityChips">
+      <button class="chip active" data-priority="all">All</button>
+      <button class="chip" data-priority="Essential">Essential</button>
+      <button class="chip" data-priority="Useful">Useful</button>
+      <button class="chip" data-priority="Optional">Optional</button>
+      <button class="chip" data-priority="As needed">As needed</button>
+    </div>
+    <label class="toggle">
+      <input type="checkbox" id="hideCompletedToggle" />
+      <span>Hide completed</span>
+    </label>
+  </section>
+
+  <main id="categoryGrid" class="category-grid"></main>
+
+  <p class="empty-state" id="emptyState" hidden>No items match your search.</p>
+
+</div>
+
+<template id="categoryCardTemplate">
+  <article class="card" data-category-id="">
+    <button class="card-header" type="button">
+      <span class="card-icon"></span>
+      <div class="card-header-text">
+        <h2 class="card-title"></h2>
+        <div class="card-progress-row">
+          <div class="progress-bar small"><div class="progress-bar-fill"></div></div>
+          <span class="card-count"></span>
+        </div>
+      </div>
+      <span class="badge-essential" hidden></span>
+      <span class="chevron">▾</span>
+    </button>
+    <ul class="item-list" hidden></ul>
+  </article>
+</template>
+
+<template id="itemRowTemplate">
+  <li class="item-row">
+    <label class="item-label">
+      <input type="checkbox" class="item-checkbox" />
+      <span class="item-text">
+        <span class="item-name"></span>
+        <span class="item-notes"></span>
+      </span>
+    </label>
+    <span class="item-qty"></span>
+    <span class="item-priority"></span>
+  </li>
+</template>
+
+<script src="js/app.js"></script>
+</body>
+</html>
