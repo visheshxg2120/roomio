@@ -20,6 +20,7 @@
       </div>
     </div>
     <div class="topbar-actions">
+      <button id="editToggleBtn" type="button" class="btn btn-ghost">✏️ Edit layout</button>
       <a href="index.html" class="btn btn-ghost">📋 Full checklist</a>
     </div>
   </header>
@@ -41,8 +42,21 @@
       <canvas id="roomCanvas"></canvas>
       <div id="roomLabels" class="room-labels"></div>
       <p id="roomLoading" class="room-loading">Building your room…</p>
+
+      <div id="editToolbar" class="edit-toolbar" hidden>
+        <div class="edit-toolbar-modes">
+          <button type="button" class="edit-mode-btn active" data-mode="translate" title="Move">✥ Move</button>
+          <button type="button" class="edit-mode-btn" data-mode="rotate" title="Rotate">↻ Rotate</button>
+          <button type="button" class="edit-mode-btn" data-mode="scale" title="Resize">⤢ Resize</button>
+        </div>
+        <span id="editSelectionLabel" class="edit-selection-label">Click a piece of furniture to select it</span>
+        <div class="edit-toolbar-actions">
+          <button type="button" id="editResetSelectedBtn" class="btn btn-ghost" disabled>Reset piece</button>
+          <button type="button" id="editResetAllBtn" class="btn btn-ghost">Reset room</button>
+        </div>
+      </div>
     </div>
-    <p class="room-hint">Drag to look around · scroll to zoom · click a zone to open its checklist</p>
+    <p class="room-hint" id="roomHint">Drag to look around · scroll to zoom · click a zone to open its checklist</p>
   </section>
 
   <section class="more-categories">
@@ -94,6 +108,7 @@
 
 <script src="js/vendor/three.min.js"></script>
 <script src="js/vendor/OrbitControls.js"></script>
+<script src="js/vendor/TransformControls.js"></script>
 <script src="js/vendor/gsap.min.js"></script>
 <script src="js/room.js"></script>
 </body>

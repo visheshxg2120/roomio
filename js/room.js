@@ -2,6 +2,7 @@
   "use strict";
 
   const STORAGE_KEY = "roomio-checklist-progress-v1";
+  const LAYOUT_STORAGE_KEY = "roomio-room-layout-v1";
   const ZONE_IDS = ["balcony", "workstation", "entryway", "bedroom", "wardrobe", "bathroom"];
   const SUCCESS_HEX = 0x4d7c5f;
 
@@ -12,6 +13,10 @@
     zoneGroups: {},
     zoneAnchors: {},
     zoneLabels: {},
+    layoutOverrides: loadJSON(LAYOUT_STORAGE_KEY, {}),
+    editableMeshes: [],
+    editMode: false,
+    selectedMesh: null,
   };
 
   const els = {
@@ -30,13 +35,20 @@
     canvas: document.getElementById("roomCanvas"),
     roomLabels: document.getElementById("roomLabels"),
     roomLoading: document.getElementById("roomLoading"),
+    roomHint: document.getElementById("roomHint"),
     otherCategories: document.getElementById("otherCategories"),
+    editToggleBtn: document.getElementById("editToggleBtn"),
+    editToolbar: document.getElementById("editToolbar"),
+    editModeBtns: document.querySelectorAll(".edit-mode-btn"),
+    editSelectionLabel: document.getElementById("editSelectionLabel"),
+    editResetSelectedBtn: document.getElementById("editResetSelectedBtn"),
+    editResetAllBtn: document.getElementById("editResetAllBtn"),
   };
 
   const itemTemplate = document.getElementById("itemRowTemplate");
   const otherChipTemplate = document.getElementById("otherChipTemplate");
 
-  let renderer, scene, camera, controls;
+  let renderer, scene, camera, controls, transformControls;
 
   // ---------- storage / data helpers ----------
 
@@ -165,7 +177,10 @@
     els.panelClose.addEventListener("click", closePanel);
     els.panelOverlay.addEventListener("click", closePanel);
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closePanel();
+      if (e.key === "Escape") {
+        if (state.editMode) setEditMode(false);
+        closePanel();
+      }
     });
   }
 
@@ -314,6 +329,7 @@
       mesh.add(new THREE.LineSegments(edgesGeo, edgesMat));
     }
     parent.add(mesh);
+    if (opts.editId) registerEditable(mesh, opts.editId, opts.editLabel);
     return mesh;
   }
 
@@ -326,7 +342,25 @@
     mesh.castShadow = true;
     mesh.receiveShadow = true;
     parent.add(mesh);
+    if (opts.editId) registerEditable(mesh, opts.editId, opts.editLabel);
     return mesh;
+  }
+
+  function registerEditable(mesh, editId, editLabel) {
+    mesh.userData.editId = editId;
+    mesh.userData.editLabel = editLabel || editId;
+    mesh.userData.defaultTransform = {
+      position: mesh.position.toArray(),
+      rotation: [mesh.rotation.x, mesh.rotation.y, mesh.rotation.z],
+      scale: mesh.scale.toArray(),
+    };
+    const saved = state.layoutOverrides[editId];
+    if (saved) {
+      mesh.position.fromArray(saved.position);
+      mesh.rotation.set(saved.rotation[0], saved.rotation[1], saved.rotation[2]);
+      mesh.scale.fromArray(saved.scale);
+    }
+    state.editableMeshes.push(mesh);
   }
 
   function addWall(x1, z1, x2, z2, height, thickness, color) {
@@ -429,17 +463,17 @@
       0xe9dfcf
     );
     // bed frame + mattress
-    addBox(bedroom, 1.6, 0.3, 2.1, 0x9c6b45, 3.3, 0.15, 2.55);
-    addBox(bedroom, 1.5, 0.18, 2.0, 0xf7f1e8, 3.3, 0.39, 2.55);
-    addBox(bedroom, 1.5, 0.14, 0.55, 0xb5673a, 3.3, 0.42, 3.35);
+    addBox(bedroom, 1.6, 0.3, 2.1, 0x9c6b45, 3.3, 0.15, 2.55, { editId: "bed-frame", editLabel: "Bed frame" });
+    addBox(bedroom, 1.5, 0.18, 2.0, 0xf7f1e8, 3.3, 0.39, 2.55, { editId: "bed-mattress", editLabel: "Mattress" });
+    addBox(bedroom, 1.5, 0.14, 0.55, 0xb5673a, 3.3, 0.42, 3.35, { editId: "bed-blanket", editLabel: "Blanket" });
     // pillows near headboard (north side of bed)
-    addBox(bedroom, 0.6, 0.14, 0.4, 0xffffff, 2.95, 0.53, 1.75);
-    addBox(bedroom, 0.6, 0.14, 0.4, 0xffffff, 3.65, 0.53, 1.75);
+    addBox(bedroom, 0.6, 0.14, 0.4, 0xffffff, 2.95, 0.53, 1.75, { editId: "pillow-left", editLabel: "Pillow (left)" });
+    addBox(bedroom, 0.6, 0.14, 0.4, 0xffffff, 3.65, 0.53, 1.75, { editId: "pillow-right", editLabel: "Pillow (right)" });
     // headboard
-    addBox(bedroom, 1.6, 0.75, 0.12, 0x9c6b45, 3.3, 0.5, 1.5);
+    addBox(bedroom, 1.6, 0.75, 0.12, 0x9c6b45, 3.3, 0.5, 1.5, { editId: "headboard", editLabel: "Headboard" });
     // nightstands at foot end
-    addBox(bedroom, 0.4, 0.45, 0.4, 0x9c6b45, 2.35, 0.22, 3.4);
-    addBox(bedroom, 0.4, 0.45, 0.4, 0x9c6b45, 4.25, 0.22, 3.4);
+    addBox(bedroom, 0.4, 0.45, 0.4, 0x9c6b45, 2.35, 0.22, 3.4, { editId: "nightstand-left", editLabel: "Nightstand (left)" });
+    addBox(bedroom, 0.4, 0.45, 0.4, 0x9c6b45, 4.25, 0.22, 3.4, { editId: "nightstand-right", editLabel: "Nightstand (right)" });
     state.zoneAnchors.bedroom = new THREE.Vector3(3.3, 1.7, 2.5);
 
     // ---- workstation zone ----
@@ -448,11 +482,11 @@
       { w: 1.15, d: 1.4, x: 0.575, y: 0, z: 2.0 },
       0xe3d6c0
     );
-    addBox(workstation, 1.0, 0.06, 0.55, 0x9c6b45, 0.55, 0.7, 1.55);
-    addBox(workstation, 0.06, 0.7, 0.5, 0x8a5a3a, 0.15, 0.35, 1.55);
-    addBox(workstation, 0.4, 0.28, 0.03, 0x2e2a26, 0.55, 0.9, 1.32);
-    addCylinder(workstation, 0.22, 0.22, 0.06, 0x5b7a9c, 0.55, 0.46, 2.15);
-    addBox(workstation, 0.35, 0.4, 0.35, 0x5b7a9c, 0.55, 0.66, 2.15, { castShadow: true });
+    addBox(workstation, 1.0, 0.06, 0.55, 0x9c6b45, 0.55, 0.7, 1.55, { editId: "desk-top", editLabel: "Desk" });
+    addBox(workstation, 0.06, 0.7, 0.5, 0x8a5a3a, 0.15, 0.35, 1.55, { editId: "desk-leg", editLabel: "Desk support" });
+    addBox(workstation, 0.4, 0.28, 0.03, 0x2e2a26, 0.55, 0.9, 1.32, { editId: "monitor", editLabel: "Monitor" });
+    addCylinder(workstation, 0.22, 0.22, 0.06, 0x5b7a9c, 0.55, 0.46, 2.15, { editId: "chair-seat", editLabel: "Chair seat" });
+    addBox(workstation, 0.35, 0.4, 0.35, 0x5b7a9c, 0.55, 0.66, 2.15, { castShadow: true, editId: "chair-back", editLabel: "Chair back" });
     state.zoneAnchors.workstation = new THREE.Vector3(0.6, 1.55, 1.85);
 
     // ---- balcony zone ----
@@ -461,8 +495,8 @@
       { w: 1.0, d: 0.9, x: 0.5, y: 0, z: 0.45 },
       0xc9ae84
     );
-    addCylinder(balcony, 0.1, 0.13, 0.3, 0x9c6b45, 0.75, 0.15, 0.25);
-    addCylinder(balcony, 0.22, 0.22, 0.05, 0x4d7c5f, 0.75, 0.33, 0.25, { segments: 8 });
+    addCylinder(balcony, 0.1, 0.13, 0.3, 0x9c6b45, 0.75, 0.15, 0.25, { editId: "plant-pot", editLabel: "Plant pot" });
+    addCylinder(balcony, 0.22, 0.22, 0.05, 0x4d7c5f, 0.75, 0.33, 0.25, { segments: 8, editId: "plant-leaves", editLabel: "Plant" });
     state.zoneAnchors.balcony = new THREE.Vector3(0.5, 1.3, 0.45);
 
     // ---- entryway (main door) zone ----
@@ -471,8 +505,8 @@
       { w: 0.8, d: 0.45, x: 1.0, y: 0, z: 3.77 },
       0x8a7256
     );
-    addBox(entryway, 0.7, 0.85, 0.05, 0x9c6b45, 0.98, 0.43, 3.98, { rotY: -0.55 });
-    addBox(entryway, 0.4, 0.5, 0.28, 0x9c6b45, 0.35, 0.25, 3.55);
+    addBox(entryway, 0.7, 0.85, 0.05, 0x9c6b45, 0.98, 0.43, 3.98, { rotY: -0.55, editId: "door", editLabel: "Door" });
+    addBox(entryway, 0.4, 0.5, 0.28, 0x9c6b45, 0.35, 0.25, 3.55, { editId: "console-table", editLabel: "Console table" });
     state.zoneAnchors.entryway = new THREE.Vector3(1.0, 1.3, 3.75);
 
     // ---- wardrobe / almirah zone ----
@@ -481,8 +515,8 @@
       { w: 1.4, d: 1.15, x: 5.3, y: 0, z: 0.575 },
       0xe0d3be
     );
-    addBox(wardrobe, 1.2, 1.3, 0.5, 0x9c6b45, 5.3, 0.65, 0.35);
-    addBox(wardrobe, 0.03, 1.3, 0.02, 0x6f4a2e, 5.3, 0.65, 0.61);
+    addBox(wardrobe, 1.2, 1.3, 0.5, 0x9c6b45, 5.3, 0.65, 0.35, { editId: "wardrobe-body", editLabel: "Wardrobe" });
+    addBox(wardrobe, 0.03, 1.3, 0.02, 0x6f4a2e, 5.3, 0.65, 0.61, { editId: "wardrobe-seam", editLabel: "Wardrobe door seam" });
     state.zoneAnchors.wardrobe = new THREE.Vector3(5.3, 1.85, 0.5);
 
     // ---- bathroom zone ----
@@ -492,13 +526,20 @@
       0xdce7e6
     );
     // WC
-    addCylinder(bathroom, 0.22, 0.26, 0.35, 0xffffff, 5.55, 0.18, 3.7);
-    addBox(bathroom, 0.4, 0.35, 0.18, 0xffffff, 5.55, 0.36, 3.95);
+    addCylinder(bathroom, 0.22, 0.26, 0.35, 0xffffff, 5.55, 0.18, 3.7, { editId: "wc-bowl", editLabel: "Toilet" });
+    addBox(bathroom, 0.4, 0.35, 0.18, 0xffffff, 5.55, 0.36, 3.95, { editId: "wc-tank", editLabel: "Toilet tank" });
     // wash basin
-    addBox(bathroom, 0.55, 0.6, 0.4, 0xf4f0e8, 4.85, 0.3, 1.5);
-    addCylinder(bathroom, 0.24, 0.24, 0.08, 0xffffff, 4.85, 0.63, 1.5);
+    addBox(bathroom, 0.55, 0.6, 0.4, 0xf4f0e8, 4.85, 0.3, 1.5, { editId: "basin-counter", editLabel: "Basin counter" });
+    addCylinder(bathroom, 0.24, 0.24, 0.08, 0xffffff, 4.85, 0.63, 1.5, { editId: "basin-bowl", editLabel: "Basin" });
     // shower corner (glass panel, translucent)
-    addBox(bathroom, 0.03, 1.3, 0.9, 0x8fd3e8, 5.9, 0.65, 3.3, { transparent: true, opacity: 0.28, castShadow: false, edges: false });
+    addBox(bathroom, 0.03, 1.3, 0.9, 0x8fd3e8, 5.9, 0.65, 3.3, {
+      transparent: true,
+      opacity: 0.28,
+      castShadow: false,
+      edges: false,
+      editId: "shower-glass",
+      editLabel: "Shower glass",
+    });
     addBox(bathroom, 0.9, 0.02, 0.9, 0xc7dede, 5.55, 0.02, 3.3, { receiveShadow: true, castShadow: false, edges: false });
     state.zoneAnchors.bathroom = new THREE.Vector3(5.3, 1.6, 2.5);
   }
@@ -528,6 +569,110 @@
       el.style.left = x + "px";
       el.style.top = y + "px";
     });
+  }
+
+  // ---------- layout editor ----------
+
+  function getPointerNDC(event) {
+    const rect = els.canvas.getBoundingClientRect();
+    return new THREE.Vector2(
+      ((event.clientX - rect.left) / rect.width) * 2 - 1,
+      -((event.clientY - rect.top) / rect.height) * 2 + 1
+    );
+  }
+
+  function onCanvasPointerDown(event) {
+    if (!state.editMode || event.button !== 0) return;
+    if (transformControls.dragging) return;
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(getPointerNDC(event), camera);
+    const hits = raycaster.intersectObjects(state.editableMeshes, false);
+    if (hits.length) selectMesh(hits[0].object);
+    else deselectMesh();
+  }
+
+  function selectMesh(mesh) {
+    state.selectedMesh = mesh;
+    transformControls.attach(mesh);
+    els.editSelectionLabel.textContent = "Editing: " + (mesh.userData.editLabel || "object");
+    els.editResetSelectedBtn.disabled = false;
+  }
+
+  function deselectMesh() {
+    state.selectedMesh = null;
+    transformControls.detach();
+    els.editSelectionLabel.textContent = "Click a piece of furniture to select it";
+    els.editResetSelectedBtn.disabled = true;
+  }
+
+  function saveLayoutOverride(mesh) {
+    if (!mesh || !mesh.userData.editId) return;
+    state.layoutOverrides[mesh.userData.editId] = {
+      position: mesh.position.toArray(),
+      rotation: [mesh.rotation.x, mesh.rotation.y, mesh.rotation.z],
+      scale: mesh.scale.toArray(),
+    };
+    saveJSON(LAYOUT_STORAGE_KEY, state.layoutOverrides);
+  }
+
+  function resetMesh(mesh) {
+    const def = mesh.userData.defaultTransform;
+    if (!def) return;
+    mesh.position.fromArray(def.position);
+    mesh.rotation.set(def.rotation[0], def.rotation[1], def.rotation[2]);
+    mesh.scale.fromArray(def.scale);
+    delete state.layoutOverrides[mesh.userData.editId];
+    saveJSON(LAYOUT_STORAGE_KEY, state.layoutOverrides);
+  }
+
+  function resetAllMeshes() {
+    if (!confirm("Reset all furniture to the original layout? This can't be undone.")) return;
+    state.editableMeshes.forEach(resetMesh);
+    deselectMesh();
+  }
+
+  function setEditMode(active) {
+    state.editMode = active;
+    els.editToggleBtn.textContent = active ? "✓ Done editing" : "✏️ Edit layout";
+    els.editToolbar.hidden = !active;
+    els.roomLabels.classList.toggle("edit-mode", active);
+    els.roomHint.textContent = active
+      ? "Click furniture to select it, then drag the gizmo to move, rotate, or resize it."
+      : "Drag to look around · scroll to zoom · click a zone to open its checklist";
+    if (active) {
+      closePanel();
+    } else {
+      deselectMesh();
+    }
+  }
+
+  function initEditor() {
+    transformControls = new THREE.TransformControls(camera, renderer.domElement);
+    transformControls.setSize(0.85);
+    scene.add(transformControls);
+
+    transformControls.addEventListener("dragging-changed", (event) => {
+      controls.enabled = !event.value;
+      if (!event.value && state.selectedMesh) saveLayoutOverride(state.selectedMesh);
+    });
+
+    els.canvas.addEventListener("pointerdown", onCanvasPointerDown);
+
+    els.editToggleBtn.addEventListener("click", () => setEditMode(!state.editMode));
+
+    els.editModeBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        els.editModeBtns.forEach((b) => b.classList.toggle("active", b === btn));
+        transformControls.setMode(btn.dataset.mode);
+      });
+    });
+
+    els.editResetSelectedBtn.addEventListener("click", () => {
+      if (state.selectedMesh) resetMesh(state.selectedMesh);
+      deselectMesh();
+    });
+
+    els.editResetAllBtn.addEventListener("click", resetAllMeshes);
   }
 
   let firstFrameRendered = false;
@@ -570,6 +715,7 @@
     buildLights();
     buildRoom();
     createZoneLabels();
+    initEditor();
 
     fitCamera();
     if (window.ResizeObserver) {
