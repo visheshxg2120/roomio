@@ -1,3 +1,8 @@
+# Requires GitHub Pages to be enabled once, manually, under
+# Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+# The default GITHUB_TOKEN can't create the Pages site itself (403
+# "Resource not accessible by integration" on the Pages API), only
+# deploy to one that already exists.
 name: Deploy to GitHub Pages
 
 on:
