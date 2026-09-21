@@ -2,15 +2,14 @@
   "use strict";
 
   const STORAGE_KEY = "roomio-checklist-progress-v1";
-  const OPEN_KEY = "roomio-checklist-open-v1";
 
   const state = {
     categories: [],
     checked: loadJSON(STORAGE_KEY, {}),
-    openCards: loadJSON(OPEN_KEY, {}),
     search: "",
     priority: "all",
     hideCompleted: false,
+    activeCategoryId: null,
   };
 
   const els = {
@@ -26,6 +25,14 @@
     statEssentialLeft: document.getElementById("statEssentialLeft"),
     statCategoriesDone: document.getElementById("statCategoriesDone"),
     statTotalItems: document.getElementById("statTotalItems"),
+    panelOverlay: document.getElementById("panelOverlay"),
+    sidePanel: document.getElementById("sidePanel"),
+    panelIcon: document.getElementById("panelIcon"),
+    panelTitle: document.getElementById("panelTitle"),
+    panelFill: document.getElementById("panelFill"),
+    panelCount: document.getElementById("panelCount"),
+    panelItemList: document.getElementById("panelItemList"),
+    panelClose: document.getElementById("panelClose"),
   };
 
   const cardTemplate = document.getElementById("categoryCardTemplate");
@@ -56,6 +63,10 @@
     if (value) state.checked[itemId] = true;
     else delete state.checked[itemId];
     saveJSON(STORAGE_KEY, state.checked);
+  }
+
+  function getCategory(id) {
+    return state.categories.find((c) => c.id === id) || null;
   }
 
   function matchesFilters(item) {
@@ -89,7 +100,9 @@
     checkbox.checked = isChecked(item.id);
     checkbox.addEventListener("change", () => {
       setChecked(item.id, checkbox.checked);
-      render();
+      refreshCardSummary(item.categoryId);
+      refreshPanelSummary();
+      renderSummary();
     });
 
     name.textContent = item.name;
@@ -98,63 +111,69 @@
     priority.textContent = item.priority;
     priority.dataset.priority = item.priority;
 
-    if (!matchesFilters(item)) node.hidden = true;
-
     return node;
+  }
+
+  function categoryHasVisibleItems(category) {
+    return category.items.some(matchesFilters);
   }
 
   function buildCategoryCard(category) {
     const node = cardTemplate.content.firstElementChild.cloneNode(true);
     node.dataset.categoryId = category.id;
 
-    const header = node.querySelector(".card-header");
     const icon = node.querySelector(".card-icon");
     const title = node.querySelector(".card-title");
-    const fill = node.querySelector(".progress-bar-fill");
-    const count = node.querySelector(".card-count");
     const essentialBadge = node.querySelector(".badge-essential");
-    const list = node.querySelector(".item-list");
 
     icon.textContent = category.icon;
     title.textContent = category.name;
+
+    applyCardSummary(node, category);
+
+    if (category.id === state.activeCategoryId) {
+      node.classList.add("active");
+    }
+
+    const filtersActive = state.search || state.priority !== "all" || state.hideCompleted;
+    if (!categoryHasVisibleItems(category) && filtersActive && category.id !== state.activeCategoryId) {
+      node.hidden = true;
+    }
+
+    node.querySelector(".card-header").addEventListener("click", () => {
+      openPanel(category.id);
+    });
+
+    return node;
+  }
+
+  function applyCardSummary(cardNode, category) {
+    const fill = cardNode.querySelector(".progress-bar-fill");
+    const count = cardNode.querySelector(".card-count");
+    const essentialBadge = cardNode.querySelector(".badge-essential");
 
     const stats = categoryStats(category);
     const pct = stats.total ? Math.round((stats.done / stats.total) * 100) : 0;
     fill.style.width = pct + "%";
     count.textContent = `${stats.done}/${stats.total}`;
-    node.dataset.complete = String(stats.total > 0 && stats.done === stats.total);
+    cardNode.dataset.complete = String(stats.total > 0 && stats.done === stats.total);
 
     if (stats.essentialLeft > 0) {
       essentialBadge.hidden = false;
       essentialBadge.textContent = `${stats.essentialLeft} essential left`;
+    } else {
+      essentialBadge.hidden = true;
     }
+  }
 
-    const visibleItems = category.items.filter(matchesFilters);
-    const isOpen = !!state.openCards[category.id];
-    const forceOpenBySearch = state.search.length > 0 && visibleItems.length > 0;
+  function refreshCardSummary(categoryId) {
+    const category = getCategory(categoryId);
+    const cardNode = els.grid.querySelector(`.card[data-category-id="${cssEscape(categoryId)}"]`);
+    if (category && cardNode) applyCardSummary(cardNode, category);
+  }
 
-    if (isOpen || forceOpenBySearch) {
-      node.classList.add("open");
-      list.hidden = false;
-    }
-
-    category.items.forEach((item) => {
-      list.appendChild(buildItemRow(item));
-    });
-
-    header.addEventListener("click", () => {
-      const nowOpen = list.hidden;
-      list.hidden = !nowOpen;
-      node.classList.toggle("open", nowOpen);
-      state.openCards[category.id] = nowOpen;
-      saveJSON(OPEN_KEY, state.openCards);
-    });
-
-    if (category.items.every((i) => !matchesFilters(i)) && (state.search || state.priority !== "all" || state.hideCompleted)) {
-      node.hidden = true;
-    }
-
-    return node;
+  function cssEscape(value) {
+    return window.CSS && CSS.escape ? CSS.escape(value) : value;
   }
 
   function render() {
@@ -169,6 +188,11 @@
 
     els.emptyState.hidden = anyVisible;
     renderSummary();
+
+    if (state.activeCategoryId) {
+      const category = getCategory(state.activeCategoryId);
+      if (category) renderPanelItems(category);
+    }
   }
 
   function renderSummary() {
@@ -192,6 +216,75 @@
     els.statEssentialLeft.textContent = essentialLeft;
     els.statCategoriesDone.textContent = `${categoriesDone}/${state.categories.length}`;
     els.statTotalItems.textContent = total;
+  }
+
+  function renderPanelItems(category) {
+    els.panelIcon.textContent = category.icon;
+    els.panelTitle.textContent = category.name;
+
+    els.panelItemList.innerHTML = "";
+    const visibleItems = category.items.filter(matchesFilters);
+    visibleItems.forEach((item) => {
+      els.panelItemList.appendChild(buildItemRow(Object.assign({}, item, { categoryId: category.id })));
+    });
+
+    if (visibleItems.length === 0) {
+      const empty = document.createElement("li");
+      empty.className = "empty-state";
+      empty.style.marginTop = "24px";
+      empty.textContent = "No items match your search.";
+      els.panelItemList.appendChild(empty);
+    }
+
+    refreshPanelSummary();
+  }
+
+  function refreshPanelSummary() {
+    const category = getCategory(state.activeCategoryId);
+    if (!category) return;
+    const stats = categoryStats(category);
+    const pct = stats.total ? Math.round((stats.done / stats.total) * 100) : 0;
+    els.panelFill.style.width = pct + "%";
+    els.panelCount.textContent = `${stats.done}/${stats.total}`;
+  }
+
+  function openPanel(categoryId) {
+    const category = getCategory(categoryId);
+    if (!category) return;
+
+    if (state.activeCategoryId === categoryId) {
+      closePanel();
+      return;
+    }
+
+    const prevActiveId = state.activeCategoryId;
+    state.activeCategoryId = categoryId;
+
+    if (prevActiveId) {
+      const prevCard = els.grid.querySelector(`.card[data-category-id="${cssEscape(prevActiveId)}"]`);
+      if (prevCard) prevCard.classList.remove("active");
+    }
+    const card = els.grid.querySelector(`.card[data-category-id="${cssEscape(categoryId)}"]`);
+    if (card) card.classList.add("active");
+
+    renderPanelItems(category);
+
+    els.sidePanel.classList.add("open");
+    els.sidePanel.setAttribute("aria-hidden", "false");
+    els.panelOverlay.classList.add("visible");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePanel() {
+    if (!state.activeCategoryId) return;
+    const card = els.grid.querySelector(`.card[data-category-id="${cssEscape(state.activeCategoryId)}"]`);
+    if (card) card.classList.remove("active");
+
+    state.activeCategoryId = null;
+    els.sidePanel.classList.remove("open");
+    els.sidePanel.setAttribute("aria-hidden", "true");
+    els.panelOverlay.classList.remove("visible");
+    document.body.style.overflow = "";
   }
 
   function wireControls() {
@@ -218,6 +311,12 @@
       state.checked = {};
       saveJSON(STORAGE_KEY, state.checked);
       render();
+    });
+
+    els.panelClose.addEventListener("click", closePanel);
+    els.panelOverlay.addEventListener("click", closePanel);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePanel();
     });
   }
 
