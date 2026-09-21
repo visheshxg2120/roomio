@@ -38,10 +38,11 @@ jobs:
 
       - name: Stage site files
         run: |
-          mkdir -p dist/css dist/js dist/data
-          cp index.html dist/
-          cp css/styles.css dist/css/
-          cp js/app.js dist/js/
+          mkdir -p dist/css dist/js dist/js/vendor dist/data
+          cp index.html room.html dist/
+          cp css/styles.css css/room.css dist/css/
+          cp js/app.js js/room.js dist/js/
+          cp js/vendor/*.js dist/js/vendor/
           cp data/checklist.json dist/data/
 
       - name: Upload site
